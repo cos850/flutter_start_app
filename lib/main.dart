@@ -71,6 +71,10 @@ class App extends StatelessWidget {
                         text: 'Transfer',
                         bgColor: Color(0xFFF1B33B),
                         textColor: Colors.black),
+                    Button(
+                        text: 'Request',
+                        bgColor: Color(0xFF1F2123),
+                        textColor: Colors.white),
                   ],
                 )
               ],
