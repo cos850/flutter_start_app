@@ -1,8 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_start_app/screens/statefull_widget.dart';
+import 'package:flutter_start_app/screens/stateless_widget.dart';
 import 'package:flutter_start_app/widgets/Button.dart';
-import 'package:flutter_start_app/widgets/currency_card.dart';
 
 void main() {
   runApp(const App());
@@ -13,127 +14,66 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return const MaterialApp(
+      home: MainScreen(),
+    );
+  }
+}
+
+class MainScreen extends StatelessWidget {
+  const MainScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
         backgroundColor: const Color(0xFF181818),
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+        appBar: AppBar(
+          title: const Text(
+            'Home',
+            style: TextStyle(color: Colors.white),
+          ),
+          iconTheme: const IconThemeData(color: Colors.white),
+          backgroundColor: const Color(0xFF181818),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(50),
+          child: Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const SizedBox(
-                  height: 80,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MyStatelessWidget(),
+                      ),
+                    );
+                  },
+                  child: const Button(
+                    text: 'stateless',
+                    bgColor: Colors.teal,
+                    textColor: Colors.white,
+                  ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        const Text(
-                          'Hay, Selena',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 34,
-                              fontWeight: FontWeight.w800),
-                        ),
-                        Text(
-                          'Welcom back',
-                          style: TextStyle(
-                              color: Colors.white.withOpacity(0.8),
-                              fontSize: 18),
-                        )
-                      ],
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 60,
-                ),
-                Text(
-                  'Total Balance',
-                  style: TextStyle(color: Colors.white.withOpacity(0.8)),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  '\$5 194 482',
-                  style: TextStyle(
-                      fontSize: 48,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white.withOpacity(0.8)),
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Button(
-                        text: 'Transfer',
-                        bgColor: Color(0xFFF1B33B),
-                        textColor: Colors.black),
-                    Button(
-                        text: 'Request',
-                        bgColor: Color(0xFF1F2123),
-                        textColor: Colors.white),
-                  ],
-                ),
-                const SizedBox(
-                  height: 50,
-                ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
-                      'Wallets',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 36,
-                          fontWeight: FontWeight.w600),
-                    ),
-                    Text(
-                      'View All',
-                      style: TextStyle(
-                          color: Colors.white.withOpacity(0.8), fontSize: 18),
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const CurrencyCard(
-                  name: 'Euro',
-                  code: 'EUR',
-                  amount: '6 428',
-                  icon: Icons.euro,
-                  isInverted: false,
-                  order: 0,
-                ),
-                const CurrencyCard(
-                  name: 'Bitcoin',
-                  code: 'BTC',
-                  amount: '9 785',
-                  icon: Icons.currency_bitcoin,
-                  isInverted: true,
-                  order: 1,
-                ),
-                const CurrencyCard(
-                  name: 'Euro',
-                  code: 'EUR',
-                  amount: '6 428',
-                  icon: Icons.euro,
-                  isInverted: false,
-                  order: 2,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MyStatefullWidget(),
+                      ),
+                    );
+                  },
+                  child: const Button(
+                    text: 'statefull',
+                    bgColor: Colors.teal,
+                    textColor: Colors.white,
+                  ),
                 ),
               ],
             ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }
