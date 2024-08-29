@@ -23,5 +23,5 @@
 ## 실행 화면
 ![alt text](docs/demo.png)
 
-## 출처
+## 참고
 [노마드코더-플러터로 웹툰 만들기](https://nomadcoders.co/flutter-for-beginners)
