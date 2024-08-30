@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_start_app/widgets/title.dart';
 
 class MyStatefullWidget extends StatefulWidget {
   const MyStatefullWidget({super.key});
@@ -22,19 +23,19 @@ class _MyStatefullWidgetState extends State<MyStatefullWidget> {
       backgroundColor: const Color(0xFF181818),
       appBar: AppBar(
         backgroundColor: const Color(0xFF181818),
-        title: const Text(
-          'Satefull Widget',
-          style: TextStyle(color: Colors.white),
-        ),
+        title: const MyLargeTitle(text: 'Satefull Widget'),
         iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'click count',
-              style: TextStyle(color: Colors.white, fontSize: 40),
+            Text(
+              'Click Counter',
+              style: TextStyle(
+                fontSize: 40,
+                color: Theme.of(context).textTheme.titleLarge!.color,
+              ),
             ),
             const SizedBox(
               height: 50,

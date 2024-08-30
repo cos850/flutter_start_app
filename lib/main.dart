@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_start_app/screens/statefull_widget.dart';
 import 'package:flutter_start_app/screens/stateless_widget.dart';
 import 'package:flutter_start_app/widgets/Button.dart';
+import 'package:flutter_start_app/widgets/title.dart';
 
 void main() {
   runApp(const App());
@@ -14,8 +15,15 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: MainScreen(),
+    return MaterialApp(
+      theme: ThemeData(
+        textTheme: const TextTheme(
+          titleLarge: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+      ),
+      home: const MainScreen(),
     );
   }
 }
@@ -28,10 +36,7 @@ class MainScreen extends StatelessWidget {
     return Scaffold(
         backgroundColor: const Color(0xFF181818),
         appBar: AppBar(
-          title: const Text(
-            'Home',
-            style: TextStyle(color: Colors.white),
-          ),
+          title: const MyLargeTitle(text: 'Home'),
           iconTheme: const IconThemeData(color: Colors.white),
           backgroundColor: const Color(0xFF181818),
         ),

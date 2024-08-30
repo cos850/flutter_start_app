@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_start_app/widgets/title.dart';
 
 import '../widgets/button.dart';
 import '../widgets/currency_card.dart';
@@ -12,10 +13,7 @@ class MyStatelessWidget extends StatelessWidget {
       backgroundColor: const Color(0xFF181818),
       appBar: AppBar(
         backgroundColor: const Color(0xFF181818),
-        title: const Text(
-          'Stateless Widget',
-          style: TextStyle(color: Colors.white),
-        ),
+        title: const MyLargeTitle(text: 'Stateless Widget'),
         iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: SingleChildScrollView(
