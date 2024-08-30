@@ -1,8 +1,9 @@
 # flutter_start_app
 
 1. 플러터 환경 구성, flutter devtools 사용법, 유용한 편집기 설정
-1. 플러터로 ui 그리기
-2. 재사용 가능한 위젯 만들기 (StatelessWidget)
+2. stateless widget 만들기
+3. statefull widget 만들기
+4. 재사용할 stateless widget 만들기
 
 ## Flutter 환경 구성
 - 설치: https://docs.flutter.dev/get-started/install <br />
@@ -21,7 +22,10 @@
 
 
 ## 실행 화면
-![alt text](docs/demo.png)
+|main|stateless|statefull|
+|:---:|:---:|:---:|
+|![메인화면](docs/main.png) | ![stateless](docs/stateless.png) | ![statefull](docs/statefull.png)
+
 
 ## 참고
 [Flutter 공식 페이지](https://docs.flutter.dev)
