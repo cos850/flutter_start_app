@@ -17,7 +17,7 @@ class _MyLargeTitleState extends State<MyLargeTitle> {
   Widget build(BuildContext context) {
     return Text(
       widget.text,
-      style: const TextStyle(color: Colors.white),
+      style: TextStyle(color: Theme.of(context).textTheme.titleLarge!.color),
     );
   }
 }
