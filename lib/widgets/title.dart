@@ -14,18 +14,6 @@ class MyLargeTitle extends StatefulWidget {
 
 class _MyLargeTitleState extends State<MyLargeTitle> {
   @override
-  void initState() {
-    super.initState();
-    print('init');
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    print('dispose');
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Text(
       widget.text,
